@@ -1,0 +1,120 @@
+=== Employee APIs ===
+
+1. Add Employee
+POST http://localhost:8885/api/employees/add
+
+{
+    "employeeId": 101,
+    "employeeName": "John Doe",
+    "userName": "johndoe",
+    "password": "password123",
+    "email": "john.doe@example.com",
+    "contactNumber": "1234567890",
+    "address": "123 Main St, City",
+    "role": "Employee",
+    "gender": "Male"
+}
+
+2. Update Employee
+PUT http://localhost:8885/api/employees/update
+
+
+{
+    "employeeId": 101,
+    "employeeName": "John Doe Updated",
+    "userName": "johndoe",
+    "password": "newpassword123",
+    "email": "john.doe@example.com",
+    "contactNumber": "9876543210",
+    "address": "456 Updated St, City",
+    "role": "Admin",
+    "gender": "Male"
+}
+
+3. Delete Employee
+DELETE http://localhost:8885/api/employees/delete/101
+
+4. Get All Employees
+GET http://localhost:8885/api/employees/all
+
+5. Search Employee by ID
+GET http://localhost:8885/api/employees/search/101
+
+6. Search Employee by Username
+GET http://localhost:8885/api/employees/searchByUsername/johndoe
+
+=== Asset APIs ===
+
+1. Add Asset
+POST http://localhost:8885/api/assets/add
+
+{
+    "assetId": 1,
+    "assetName": "Dell Laptop",
+    "assetCategory": "Electronics",
+    "assetModel": "XPS 15",
+    "purchaseDate": "2023-01-15",
+    "status": "Available"
+}
+
+2. Update Asset
+PUT http://localhost:8885/api/assets/update
+
+
+{
+    "assetId": 1,
+    "assetName": "Dell Laptop XPS 15",
+    "assetCategory": "Electronics",
+    "assetModel": "XPS 15 2023",
+    "purchaseDate": "2023-01-15",
+    "status": "Allocated"
+}
+
+3. Delete Asset
+DELETE http://localhost:8885/api/assets/delete/1
+
+4. Get All Assets
+GET http://localhost:8885/api/assets/all
+
+5. Search Asset by ID
+GET http://localhost:8885/api/assets/search/1
+
+6. Search Assets by Category
+GET http://localhost:8885/api/assets/searchByCategory/Electronics
+
+=== Asset Request APIs ===
+
+1. Submit Request
+POST http://localhost:8885/api/asset-requests/submit
+
+
+{
+    "requestId": 1,
+    "employeeId": 101,
+    "assetId": 1,
+    "requestDate": "2023-06-01",
+    "issueDescription": "Need for new project",
+    "requestStatus": "Pending"
+}
+
+2. Update Request
+PUT http://localhost:8885/api/asset-requests/update
+
+
+{
+    "requestId": 1,
+    "employeeId": 101,
+    "assetId": 1,
+    "requestDate": "2023-06-01",
+    "issueDescription": "Need for new project - Urgent",
+    "requestStatus": "Approved"
+}
+
+3. Get All Requests
+GET http://localhost:8885/api/asset-requests/all
+
+4. Get Request by ID
+GET http://localhost:8885/api/asset-requests/1
+
+5. Get Requests by Status
+GET http://localhost:8885/api/asset-requests/status/Approved
